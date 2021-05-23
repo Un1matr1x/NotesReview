@@ -61,9 +61,9 @@
           crossorigin="anonymous"></script>
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"NotesReview","author":"ENT8R","description":"An interface for searching and resolving OpenStreetMap notes","logo":"https://ent8r.github.io/NotesReview/icon.png","url":"https://ent8r.github.io/NotesReview/","applicationCategory":"Utility","applicationSubCategory":"OpenStreetMap Utility","browserRequirements":"Requires JavaScript. Requires HTML5.","isAccessibleForFree":true,"license":"https://www.gnu.org/licenses/gpl-3.0.html","operatingSystem":"All","releaseNotes":"https://github.com/ENT8R/NotesReview/releases","softwareHelp":{"@type":"CreativeWork","url":"https://github.com/ENT8R/NotesReview/issues"},"softwareVersion":"2.0.0","screenshot":"https://cdn.jsdelivr.net/gh/ENT8R/NotesReview/assets/screenshots/light/map.png","potentialAction":{"@type":"SearchAction","target":"https://ent8r.github.io/NotesReview/?query={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<script type="module" crossorigin src="/NotesReview/assets/index.404a2fb5.js"></script>
-  <link rel="modulepreload" href="/NotesReview/assets/vendor.cd34abf3.js">
-  <link rel="stylesheet" href="/NotesReview/assets/index.1716b2ae.css">
+<script type="module" crossorigin src="/NotesReview/assets/index.4da1d956.js"></script>
+  <link rel="modulepreload" href="/NotesReview/assets/vendor.e76f5fe5.js">
+  <link rel="stylesheet" href="/NotesReview/assets/index.773eb569.css">
 </head>
 
 <body>
@@ -105,17 +105,24 @@
       </a>
     </section>
   
-    <section class="navbar-section">
-      <svg class="p-centered p-1 hide-md" height="44">
+    <section class="navbar-section hide-md">
+      <svg class="p-centered p-1" height="44">
         <use xlink:href="#assets-notesreview-horizontal"></use>
       </svg>
     </section>
   
     <section class="navbar-section">
-      <button class="btn btn-primary modal-trigger flex-grow" data-modal="filter" aria-label="Apply a filter to the selection" data-i18n>
+      <button id="search" class="btn btn-primary tooltip tooltip-bottom flex-grow m-1" data-i18n data-i18n-data-tooltip="description.worldwideQuery">
+        <svg class="icon"><use xlink:href="#icon-search"></use></svg>
+        <span class="hide-xs" data-i18n="action.search">Search</span>
+        <svg id="fast-search" class="icon d-hide"><use xlink:href="#icon-flash"></use></svg>
+      </button>
+      <!-- TODO: Add translation -->
+      <button class="btn btn-primary modal-trigger flex-grow m-1" data-modal="filter" aria-label="Apply a filter to the selection" data-i18n>
         <svg class="icon"><use xlink:href="#icon-filter"></use></svg>
         <span class="hide-xs" data-i18n>Filter</span>
       </button>
+  
       <button class="btn btn-action modal-trigger m-1" data-modal="help" aria-label="Open frequently asked questions" data-i18n data-i18n-aria-label="accessibility.openFaq">
         <svg class="icon"><use xlink:href="#icon-help"></use></svg>
       </button>
@@ -207,14 +214,6 @@
         </div>
     
         <div class="modal-footer">
-          <a id="search" class="btn btn-primary btn-lg modal-close float-left tooltip"
-                         data-i18n data-i18n-data-tooltip="description.worldwideQuery">
-            <svg class="icon"><use xlink:href="#icon-search"></use></svg>
-            <!-- TODO: Maybe change wording to filter or apply? -->
-            <span data-i18n="action.search">Search</span>
-            <svg id="fast-search" class="icon d-hide"><use xlink:href="#icon-flash"></use></svg>
-          </a>
-    
           <a class="btn btn-link modal-close" data-i18n="action.close">Close</a>
         </div>
       </div>
@@ -402,24 +401,11 @@
     
       <div class="modal-container">
         <div class="modal-body">
-          <div class="content">
-            <div id="comments" class="clear-on-modal-close"></div>
-    
-            <div class="form-group">
-              <textarea id="note-comment" class="form-input requires-authentication" laceholder="Write a comment for all other users"
-                        rows="3" data-i18n data-i18n-placeholder="comments.inputPlaceholder"></textarea>
-            </div>
-    
-            <div id="note-comment-actions" class="btn-group btn-group-block d-hide requires-authentication">
-              <button class="btn comment-action" data-action="comment" data-i18n="action.comment">Comment</button>
-              <button class="btn comment-action" data-action="close" data-i18n="action.commentClose">Comment and close</button>
-              <button class="btn comment-action" data-action="reopen" data-i18n="action.commentReopen">Reopen and comment</button>
-            </div>
-          </div>
+          <div id="modal-comments-content" class="content clear-on-modal-close"></div>
         </div>
     
         <div class="modal-footer">
-          <a class="btn btn-primary float-left" id="note-link" target="_blank" rel="noopener">
+          <a id="modal-comments-note-link" class="btn btn-primary float-left" target="_blank" rel="noopener">
             <svg class="icon"><use xlink:href="#icon-external"></use></svg>
             <span data-i18n="action.openstreetmap">OpenStreetMap</span>
           </a>
@@ -448,14 +434,15 @@
     </div>
   </div>
 
-  <div id="content" class="columns col-gapless col-12">
-    <div id="map" class="d-hide col-12"></div>
+  <main>
+    <div id="map" class="d-hide"></div>
     <div id="list" class="d-hide columns m-2"></div>
-  </div>
+  </main>
 
   <div id="preloader" class="columns overlay d-hide">
     <div class="col-3 col-md-6 col-sm-8 m-auto">
       <progress class="progress my-2" max="100"></progress>
+
       <a id="cancel" class="btn btn-primary btn-lg col-12 my-2">
         <svg class="icon"><use xlink:href="#icon-close"></use></svg>
         <span data-i18n="action.cancel">Cancel</span>
