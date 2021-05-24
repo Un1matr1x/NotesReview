@@ -60,10 +60,10 @@
           integrity="sha384-xyhN4T4+9VPh8uXl6uWjGzsqwNXN9C2tla8b6zSrSqYlMFUoeCdoxiEJU0js+GNE"
           crossorigin="anonymous"></script>
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"NotesReview","author":"ENT8R","description":"An interface for searching and resolving OpenStreetMap notes","logo":"https://ent8r.github.io/NotesReview/icon.png","url":"https://ent8r.github.io/NotesReview/","applicationCategory":"Utility","applicationSubCategory":"OpenStreetMap Utility","browserRequirements":"Requires JavaScript. Requires HTML5.","isAccessibleForFree":true,"license":"https://www.gnu.org/licenses/gpl-3.0.html","operatingSystem":"All","releaseNotes":"https://github.com/ENT8R/NotesReview/releases","softwareHelp":{"@type":"CreativeWork","url":"https://github.com/ENT8R/NotesReview/issues"},"softwareVersion":"2.0.0","screenshot":"https://cdn.jsdelivr.net/gh/ENT8R/NotesReview/assets/screenshots/light/map.png","potentialAction":{"@type":"SearchAction","target":"https://ent8r.github.io/NotesReview/?query={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<script type="module" crossorigin src="/NotesReview/assets/index.4da1d956.js"></script>
-  <link rel="modulepreload" href="/NotesReview/assets/vendor.e76f5fe5.js">
-  <link rel="stylesheet" href="/NotesReview/assets/index.773eb569.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"NotesReview","author":"ENT8R","description":"An interface for searching and resolving OpenStreetMap notes","logo":"https://ent8r.github.io/NotesReview/icon.png","url":"https://ent8r.github.io/NotesReview/","applicationCategory":"Utility","applicationSubCategory":"OpenStreetMap Utility","browserRequirements":"Requires JavaScript. Requires HTML5.","isAccessibleForFree":true,"license":"https://www.gnu.org/licenses/gpl-3.0.html","operatingSystem":"All","releaseNotes":"https://github.com/ENT8R/NotesReview/releases","softwareHelp":{"@type":"CreativeWork","url":"https://github.com/ENT8R/NotesReview/issues"},"softwareVersion":"3.0.0","screenshot":"https://cdn.jsdelivr.net/gh/ENT8R/NotesReview/assets/screenshots/light/map.png","potentialAction":{"@type":"SearchAction","target":"https://ent8r.github.io/NotesReview/?query={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type="module" crossorigin src="/NotesReview/assets/index.1ec16be4.js"></script>
+  <link rel="modulepreload" href="/NotesReview/assets/vendor.b87ee2e0.js">
+  <link rel="stylesheet" href="/NotesReview/assets/index.e1ce5db4.css">
 </head>
 
 <body>
@@ -112,15 +112,13 @@
     </section>
   
     <section class="navbar-section">
-      <button id="search" class="btn btn-primary tooltip tooltip-bottom flex-grow m-1" data-i18n data-i18n-data-tooltip="description.worldwideQuery">
+      <button id="search" class="btn btn-primary m-1 flex-grow">
         <svg class="icon"><use xlink:href="#icon-search"></use></svg>
         <span class="hide-xs" data-i18n="action.search">Search</span>
-        <svg id="fast-search" class="icon d-hide"><use xlink:href="#icon-flash"></use></svg>
       </button>
-      <!-- TODO: Add translation -->
-      <button class="btn btn-primary modal-trigger flex-grow m-1" data-modal="filter" aria-label="Apply a filter to the selection" data-i18n>
+      <button class="btn btn-primary modal-trigger m-1 flex-grow" data-modal="filter" aria-label="Apply a filter to the selection" data-i18n data-i18n-aria-label="accessibility.filter">
         <svg class="icon"><use xlink:href="#icon-filter"></use></svg>
-        <span class="hide-xs" data-i18n>Filter</span>
+        <span class="hide-xs" data-i18n="action.filter">Filter</span>
       </button>
   
       <button class="btn btn-action modal-trigger m-1" data-modal="help" aria-label="Open frequently asked questions" data-i18n data-i18n-aria-label="accessibility.openFaq">
@@ -155,7 +153,7 @@
             
               <div class="column col-6 col-sm-3">
                 <label class="form-label" for="limit" data-i18n="header.limit">Limit</label>
-                <input class="form-input update-link" id="limit" type="number" value="100" min="0" max="10000">
+                <input class="form-input update-link" id="limit" type="number" value="50" min="0" max="100">
               </div>
             
               <div class="column col-6 col-sm-9">
@@ -175,17 +173,17 @@
             
               <div class="column col-4 col-sm-12">
                 <label class="form-label" for="sort" data-i18n="header.sort">Sort by</label>
-                <select id="sort" class="form-select update-link">
-                  <option value="created_at-newest" data-i18n="description.sort.created.desc">Newest</option>
-                  <option value="created_at-oldest" data-i18n="description.sort.created.asc">Oldest</option>
-                  <option value="updated_at-newest" data-i18n="description.sort.updated.desc">Recently updated</option>
-                  <option value="updated_at-oldest" data-i18n="description.sort.updated.asc">Least recently updated</option>
+                <select class="form-select update-link" id="sort">
+                  <option value="created_at-descending" data-i18n="description.sort.created.desc">Newest</option>
+                  <option value="created_at-ascending" data-i18n="description.sort.created.asc">Oldest</option>
+                  <option value="updated_at-descending" data-i18n="description.sort.updated.desc">Recently updated</option>
+                  <option value="updated_at-ascending" data-i18n="description.sort.updated.asc">Least recently updated</option>
                 </select>
               </div>
             
               <div class="column col-6 col-sm-12">
                 <label class="form-checkbox">
-                  <input type="checkbox" class="update-link" id="show-closed">
+                  <input class="update-link" id="show-closed" type="checkbox">
                   <i class="form-icon"></i>
                   <span data-i18n="description.showClosed">Show closed notes</span>
                 </label>
@@ -193,9 +191,25 @@
             
               <div class="column col-6 col-sm-12">
                 <label class="form-checkbox">
-                  <input type="checkbox" class="update-link" id="hide-anonymous">
+                  <input class="update-link" id="hide-anonymous" type="checkbox">
                   <i class="form-icon"></i>
                   <span data-i18n="description.hideAnonymous">Hide anonymous notes</span>
+                </label>
+              </div>
+            
+              <div class="column col-6 col-sm-12">
+                <label class="form-checkbox">
+                  <input class="update-link" id="apply-bbox" type="checkbox">
+                  <i class="form-icon"></i>
+                  <span data-i18n="description.applyBoundingBox">Search only in current view</span>
+                </label>
+              </div>
+            
+              <div class="column col-6 col-sm-12">
+                <label class="form-checkbox">
+                  <input class="update-link" id="only-uncommented" type="checkbox">
+                  <i class="form-icon"></i>
+                  <span data-i18n="description.onlyUncommented">Show only uncommented notes</span>
                 </label>
               </div>
             
@@ -428,6 +442,38 @@
             <svg class="icon"><use xlink:href="#icon-external"></use></svg>
             <span data-i18n="action.mapillary">Mapillary</span>
           </a>
+          <a class="btn btn-link modal-close" data-i18n="action.close">Close</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" data-modal="notice">
+      <a class="modal-overlay modal-close" aria-label="Close" data-i18n-aria-label="action.close"></a>
+    
+      <div class="modal-container">
+        <div class="modal-body">
+          <div class="content">
+            <svg class="p-centered"><use xlink:href="#illustration-new-message"></use></svg>
+            <h5 class="text-center">
+              NotesReview now has a <b>new, own backend</b> for finding notes!
+            </h5>
+            <p class="text-center">
+              This allows <b>flexible and noticeable faster queries</b> and easier integration of future changes and additions.<br>
+              <sub><mark>You can find the source code of the new backend here: <a href="https://github.com/ENT8R/notesreview-api">https://github.com/ENT8R/notesreview-api</a></mark></sub>
+            </p>
+            <div class="divider"></div>
+            <p class="text-center">
+              Except for faster queries and an improved search, you probably will not notice a difference between the new and the old backend. But this does not mean that there will not be any changes in upcoming versions. Stay tuned for features like regex search and labelling of notes for an even more efficient workflow.
+            </p>
+            <p class="text-center">
+              If you spotted a bug or noticed weird and unexpected behaviour, please open a new issue at <a href="https://github.com/ENT8R/NotesReview/issues">https://github.com/ENT8R/NotesReview/issues</a>
+            </p>
+            <div class="divider"></div>
+            <div class="text-center"><b>Thank you for using NotesReview! ❤️</b></div>
+          </div>
+        </div>
+    
+        <div class="modal-footer">
           <a class="btn btn-link modal-close" data-i18n="action.close">Close</a>
         </div>
       </div>
