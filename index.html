@@ -62,7 +62,7 @@
           crossorigin="anonymous"></script>
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"NotesReview","author":"ENT8R","description":"An interface for searching and resolving OpenStreetMap notes","logo":"https://ent8r.github.io/NotesReview/icon.png","url":"https://ent8r.github.io/NotesReview/","applicationCategory":"Utility","applicationSubCategory":"OpenStreetMap Utility","browserRequirements":"Requires JavaScript. Requires HTML5.","isAccessibleForFree":true,"license":"https://www.gnu.org/licenses/gpl-3.0.html","operatingSystem":"All","releaseNotes":"https://github.com/ENT8R/NotesReview/releases","softwareHelp":{"@type":"CreativeWork","url":"https://github.com/ENT8R/NotesReview/issues"},"softwareVersion":"3.0.0","screenshot":"https://cdn.jsdelivr.net/gh/ENT8R/NotesReview/assets/screenshots/light/map.png","potentialAction":{"@type":"SearchAction","target":"https://ent8r.github.io/NotesReview/?query={search_term_string}","query-input":"required name=search_term_string"}}</script>
-  <script type="module" crossorigin src="/NotesReview/assets/index.b5cbf190.js"></script>
+  <script type="module" crossorigin src="/NotesReview/assets/index.a01881bc.js"></script>
   <link rel="modulepreload" href="/NotesReview/assets/vendor.57a43f51.js">
   <link rel="stylesheet" href="/NotesReview/assets/index.83688625.css">
 </head>
@@ -164,13 +164,23 @@
             </div>
           
             <div class="column col-4 col-sm-12">
-              <label class="form-label" for="from" data-i18n="header.from">From</label>
-              <input class="form-input" id="from" type="date">
+              <label class="form-label" for="from">
+                <span data-i18n="header.from">From</span>
+                <span class="tooltip tooltip-right" data-tooltip="" data-i18n data-i18n-data-tooltip="description.from">
+                  <svg class="icon icon-small"><use xlink:href="#icon-help"></use></svg>
+                </span>
+              </label>
+              <input class="form-input" id="from" type="date" min="2013-04-23">
             </div>
           
             <div class="column col-4 col-sm-12">
-              <label class="form-label" for="to" data-i18n="header.to">To</label>
-              <input class="form-input" id="to" type="date">
+              <label class="form-label" for="to">
+                <span data-i18n="header.to">To</span>
+                <span class="tooltip tooltip-right" data-tooltip="" data-i18n data-i18n-data-tooltip="description.to">
+                  <svg class="icon icon-small"><use xlink:href="#icon-help"></use></svg>
+                </span>
+              </label>
+              <input class="form-input" id="to" type="date" min="2013-04-23">
             </div>
           
             <div class="column col-4 col-sm-12">
