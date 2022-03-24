@@ -1,4 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- ph:lightning -->
-<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polygon points="96 240 112 160 48 136 160 16 144 96 208 120 96 240" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polygon></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polygon fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" points="96 240 112 160 48 136 160 16 144 96 208 120 96 240"/></svg>
